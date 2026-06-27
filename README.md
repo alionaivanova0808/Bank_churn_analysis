@@ -21,13 +21,3 @@
 - отток по количеству продуктов (`churn_by_products`)
 - отток по активности (`churn_by_activity`)
 
-Пример запроса (отток по странам):
-```sql
-SELECT 
-    Geography,
-    COUNT(*) AS TotalCustomers,
-    SUM(Exited) AS Churned,
-    AVG(Exited) * 100 AS ChurnRatePercent
-FROM churn
-GROUP BY Geography
-ORDER BY ChurnRatePercent DESC;
